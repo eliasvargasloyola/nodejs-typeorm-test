@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-typeorm-test",
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "devDependencies": {
+    "ts-node": "3.3.0",
+    "@types/node": "^8.0.29",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.10",
+    "tsconfig-paths": "^3.11.0",
+    "typeorm": "0.2.37"
+  },
+  "scripts": {
+    "start:dev": "export NODE_ENV=develop && nodemon src/index.ts",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js -c develop",
+    "typeorm:migration:generate": "npm run typeorm -- migration:generate -n",
+    "typeorm:migration:run": "npm run typeorm -- migration:run",
+    "typeorm:migration:revert": "npm run typeorm -- migration:revert",
+    "db:sync": "npm run typeorm -- schema:sync"
+  }
+}
